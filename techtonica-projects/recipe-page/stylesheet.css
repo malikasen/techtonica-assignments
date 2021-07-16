@@ -1,5 +1,6 @@
 body {
 	background-color: rgb(250,247,241);
+	margin-left: 20px;
 }
 h2{
 	font-family: 'Fredoka One', cursive;
@@ -14,7 +15,7 @@ h2, h3, li, p {
 .left {
 	width: 600px;
 	float: left;
-	margin-top: 22px;
+	margin-top: 10px;
 }
 .right {
 	width:  600px;
