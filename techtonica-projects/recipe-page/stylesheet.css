@@ -1,6 +1,10 @@
 body {
 	background-color: rgb(250,247,241);
 }
+h2{
+	font-family: 'Fredoka One', cursive;
+	font-size: 2.5rem;
+}
 h2, h3, li, p {
 	color: rgb(70,59,40);
 }
