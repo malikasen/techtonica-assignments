@@ -8,3 +8,6 @@ h2{
 h2, h3, li, p {
 	color: rgb(70,59,40);
 }
+.description {
+	width: 600px;
+}
