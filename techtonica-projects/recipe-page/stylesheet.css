@@ -14,4 +14,10 @@ h2, h3, li, p {
 .left {
 	width: 600px;
 	float: left;
+	margin-top: 22px;
+}
+.right {
+	width:  600px;
+	float:  left;
+	margin-left: 30px;
 }
