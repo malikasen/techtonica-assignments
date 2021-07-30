@@ -1,0 +1,133 @@
+*{
+	font-family: sans-serif;
+}
+.center {
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+}
+.full-name {
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 2.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    line-height: 1.6;
+	color: black;
+}
+h1{
+	font-size: 2.2rem;
+    line-height: 1.6;
+	color: black;
+	font-weight: 600;
+	font-family: serif;
+}
+h2{
+	font-size: 2rem;
+    line-height: 1.4;
+	color: black;
+	font-weight: 600;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+h3{
+	font-size: 1.6rem;
+    line-height: 1.5;
+	color: black;
+	font-weight: 600;
+}
+h4{
+	font-size: 1.4rem;
+    line-height: 1.42857;
+	color: black;
+	font-weight: 400;
+}
+h5{
+	font-size: 1.4rem;
+    line-height: 1.42857;
+	font-family: sans-serif;
+	color: black;
+	font-weight: 400;
+}
+a, p{
+	font-size: 1.4rem;
+    line-height: 1.42857;
+	font-weight: 400;
+}
+a{
+	color: royalblue;
+}
+.certificates{
+	width: 800px;
+	border-style: solid;
+	border-color: black;
+	border-width: narrow;
+	margin-bottom: 15px;
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	width: 70%;
+}
+#img4,#img5{
+	/*transform: rotate(270deg);*/
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	width: 50%;
+}
+/*#img5{
+	transform: rotate(270deg);
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	width: 50%;
+}*/
+
+img+h1{
+	float: initial;
+
+}
+li{
+	padding: 10px;
+}
+li.key-skill{
+	font-size: 1.4rem;
+    line-height: 1.42857;
+	color: black;
+	font-weight: 400;
+}
+.menu{
+	list-style: none;
+	float: left;
+	font-size: 2rem;
+    line-height: 1.4;
+	text-color: black;
+}
+.menu2{
+	list-style: none;
+	font-size: 2rem;
+    line-height: 1.4;
+}
+.menu-text{
+	text-color: black;
+	color: black;
+}
+li a:hover{
+	background-color: dimgrey;
+}
+.portrait{
+	border-color: white;
+    border-style: solid;
+    height: 200px;
+    border-width: 2px;
+    border-radius: 500px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.uni-logo{
+	float: left;
+	margin-right: 14px;
+}
