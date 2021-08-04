@@ -7,16 +7,19 @@
 <body>
 	<div>
 		<h1>Welcome to 'Guess My Number' Game</h1>
-		<form>
+		<form id='minAndMax'>
 			<label for='minNum'>Please, enter the minimum number</label>
-			<input type='number' step='1' name='minNum' id='minNum'></input>
+			<input type='number' step='1' name='minNum' id='minNum' required></input>
 			<label for='maxNum'>Please, enter the maximum number</label>
-			<input type='number' step='1' name='maxNum' id='maxNum'></input>
+			<input type='number' step='1' name='maxNum' id='maxNum' required></input>
+			<input type='button' id='generate' value='generate number'></input>
 		</form>
+		<p id='missingInput'></p>
 		<h3>I generated a random number between<span></span>and<span></span></h3>
 		<form>
 			<label for='guess'>Guess what number it is?</label>
 			<input type="number" step='1' name='guess' id='guess'>
+			<input type='button' id='try' value='try!'></input>
 		</form>
 		<p></p>
 		<h2>Your guesses so far:</h2>
