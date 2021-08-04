@@ -4,7 +4,7 @@ function getRandomNumber(min, max) {
 
 function generateMessage() {
   if (inputsEntered()) {
-    label1.textContent = 'The number is generated!'
+    label1.textContent = `The number is generated! It is between ${getMin()} and ${getMax()}.`
     return getRandomNumber(getMin(), getMax());
   }
 }
