@@ -2,11 +2,15 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>Guess My Number</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div>
-		<h1>Welcome to 'Guess My Number' Game</h1>
+	<div class="fireworks-example">
+		<h1>Welcome to "Guess My Number" Game</h1>
 		<form id='minAndMax'>
 			<label for='minNum'>Please, enter the minimum number</label>
 			<input type='number' step='1' name='minNum' id='minNum' required></input>
@@ -21,9 +25,10 @@
 			<input type='button' id='try' value='try!'></input>
 		</form>
 		<p id='result'></p>
-		<h2>Your guesses so far:</h2>
+		<h2>Your last guesses were</h2>
 		<h2 id='guesses'></h2>
 	</div>
 	<script src='script.js' type="text/javascript"></script>
+	<!-- <script src="dist/fireworks.js"></script> -->
 </body>
 </html>
