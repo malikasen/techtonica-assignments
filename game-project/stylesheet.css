@@ -25,3 +25,43 @@ input {
 	height: 3em;
 	white-space: normal;
 }
+
+body {
+  min-height: 450px;
+  height: 100vh;
+  margin: 0;
+  background: radial-gradient(circle, #0077ea, #1f4f96, #1b2949, #000);
+}
+
+#checkbox {
+	width: 100px;
+	height: 100px;
+	border: 1px solid black;
+}
+
+.checked {
+	background-color: red;
+}
+
+.unchecked {
+	background-color: green;
+}
+
+input[role=button] {
+  background-color: #0077ea;
+  border: solid;
+  color: black;
+  /*padding: 10px 15px;*/
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+  white-space: normal;
+  box-shadow: 5px 10px 18px #000;
+}
+
+#generate {
+	
+}
