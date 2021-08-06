@@ -7,7 +7,7 @@ function getRandomNumber(min, max) {
 function generateMessage() {
   if (inputsEntered()) {
     randomNumber = getRandomNumber(getMin(), getMax());
-    label1.textContent = `The number is generated! It is between ${getMin()} and ${getMax()}. It is ${randomNumber}.`
+    label1.textContent = `The number is generated! It is between ${getMin()} and ${getMax()}.`
     return getRandomNumber(getMin(), getMax());
   }
 }
@@ -39,7 +39,6 @@ function generateResult() {
       str = 'The number is lower. Try again.';
     } else {
       str = 'You guessed it right!!!'
-      // fireworks.start();
     }
     label2.textContent = str;
     label3.textContent = pastGuesses;
@@ -56,15 +55,15 @@ var buttonTry = document.querySelector('#try');
 buttonTry.addEventListener('click', generateResult);
 var label3 = document.querySelector('#guesses');
 
-var checkBox = document.getElementById('checkbox');
+var checkBox = document.getElementById('generate');
 checkBox.addEventListener('click', function() {
-  var isPressed = checkBox.getAttribute('aria-checked');
+  var isPressed = checkBox.getAttribute('aria-pressed');
   if (isPressed === 'false') {
-    checkBox.setAttribute('aria-checked','true');
-    checkBox.className = 'checked';
+    checkBox.setAttribute('aria-pressed','true');
+    // checkBox.className = 'checked';
   } else {
-    checkBox.setAttribute('aria-checked','false');
-    checkBox.className = 'unchecked';
+    checkBox.setAttribute('aria-pressed','false');
+    // checkBox.className = 'unchecked';
   }
 })
 
