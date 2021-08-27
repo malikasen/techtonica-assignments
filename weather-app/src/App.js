@@ -28,7 +28,7 @@ function ForecastDay({forecast}) {
     <div className='forecastDay'>
       {/* <h3 id='dayOfWeek'>{dayOfWeek}</h3> */}
       <h3 className='date'>{forecast.dt_txt}</h3>
-      <i className='weatherIcon'></i>
+      <span className='weatherIcon' src={'http://openweathermap.org/img/w/' + forecast.weather[0].icon + '.png'} alt='Icon weather should be here'></span>
       <h4 className='temp'>Temp {forecast.main.temp} F</h4>
       <h4 className='description'>{forecast.weather[0].description}</h4>
       <h4 className='humidity'>Humidity: {forecast.main.humidity}</h4>
@@ -40,9 +40,10 @@ function ForecastDay({forecast}) {
 function Forecast({city}) {
   const [forecasts, setForecasts] = useState([]);
   const fetchData = () => {
-    fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=3d1dfd49bd39d14e53c1764e6af8b0cc")
+    fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=c2a342ca948b9c3c397372c123d2a67a")
     // 5day/3 hour "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=3d1dfd49bd39d14e53c1764e6af8b0cc" 
     // 799fecc631c47adc89b3f3f3e590285b
+    // c2a342ca948b9c3c397372c123d2a67a
     .then((response) => response.json())
     .then(function(json) {
       console.log(json);
