@@ -4,57 +4,66 @@ import questionsData from './components/questionsData'
 import Question from './components/Question'
 import Welcome from './components/Welcome'
 
+function FinalScore({score, totalScore}) {
+  return (
+    <>
+      <p>Congatulation! Your final score was {score}/{totalScore}</p>
+    </>
+  )
+}
+
 function App() {
   const [feedback, setFeedback] = useState('Feedback will be displayed here');
-  const [currentQuestion, setCurrentQuestion] = useState();
-  const [correctAnswers, setCorrectAnswers] = useState([]);
-  const [incorrectAnswers, setIncorrectAnswers] = useState([]);
+  const [score, setScore] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
-  const [unAnsweredQuestions, setUnAnsweredQuestions] = useState([]);
+  const [questionList, setQuestionList] = useState([]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+
   useEffect(() => {
     return fetch('http://localhost:9000/questions')
     .then(response => response.json())
-    .then(json => setUnAnsweredQuestions(json))
-    .then(() => {
-      console.log(unAnsweredQuestions)
-    })
+    .then(json => setQuestionList(json))
     .catch(error => console.log(error))
   }, [])
 
+  const incrementQuestionIndex = () => {
+    setCurrentQuestionIndex(currentQuestionIndex + 1);
+  }
+
   // const [unAnsweredQuestions, setUnAnsweredQuestions] = useState
-  const onAnswer = (correctAnswer, actualAnswer) => {
+  const checkAnswer = (correctAnswer, actualAnswer) => {
+    
     if (correctAnswer === actualAnswer) {
       setFeedback("Correct!");
+      setScore(score + 1);
     } else {
       setFeedback("Wrong Answer!");
     }
   }
-  const getNextQuestion = useCallback(() => {
-    const questionClone = [...unAnsweredQuestions];
-    // console.log(unAnsweredQuestions)
-    // console.log(questionClone)
-    setCurrentQuestion(questionClone.pop());
-    setUnAnsweredQuestions(questionClone);
-  }, [unAnsweredQuestions])
-  useEffect(() => {
-    getNextQuestion();
-  }, [unAnsweredQuestions])
-  // const questionComponents = unAnsweredQuestions.map(item => <Question key={item.id} question={item} onAnswer={onAnswer} />)
+ 
   const beginGame = () => {
     setGameStarted(true);
   } 
-  // console.log(currentQuestion);
+
   if (!gameStarted) {
     return <Welcome onClick={beginGame}/>
   }
+
+  if(currentQuestionIndex === questionList.length) {
+    return <FinalScore score={score} totalScore={questionList.length} />
+  }
+
   return (
     <div className="App">
       <div className='feedback'>
         {feedback} 
       </div>
+      <div id='score-section'>
+        {score}/{questionList.length}
+      </div>
       <div>
         {/* {questionComponents} */}
-        <Question question={currentQuestion} onAnswer={onAnswer} />
+        <Question question={questionList[currentQuestionIndex]} onAnswer={checkAnswer} onNext={incrementQuestionIndex} />
       </div>
     </div>
   );
