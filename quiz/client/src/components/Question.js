@@ -16,6 +16,7 @@ function Question(props) {
   }
   return (
       <div className='q-container'>
+        <div className='backg'></div>
         <h3 className='q-q'>Question {props.question.id}: {props.question.title}</h3>
         {/* <div className='q-row'> */}
           <input className="box q-btn" type='submit' value={props.question.choices[0]} onClick={ () => onAnswer(0) } disabled={questionAnswered} />

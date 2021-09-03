@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Rampart+One');
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+@import url('https://fonts.googleapis.com/css?family=Lilita+One');
+
 .App {
   text-align: center;
 }
@@ -14,21 +18,30 @@
 .q-q{
   display: block;
   margin: 5% 10%;
+  font-family: 'Russo One';
+  color: #683F00;
 }
 .q-container{
   display: block;
   grid-template-columns: repeat(2, 80px);
   grid-gap: 6px 10px;
+  text-align: center;
+  position: center;
+  z-index: 1;
+  backface-visibility: hidden;
 }
 /* .q-row{
   display : flex;
   flex-direction: column;
 } */
 .box{
-  border : 2px solid black;
+  border : 2px solid #BF0A30;
   border-radius : 10px;
   margin-top: 0.5%;
   margin-bottom: 0.5%;
+  font-family: 'Russo One';
+  background-color: #ACCCFF;
+  color: white;
 }
 .q-next{
   border : 2px solid black;
@@ -45,8 +58,7 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: medium;
   font-weight: bolder;
-  border-style: solid;
-  border-color: #002868 ; 
+  border: 4px solid #002868 ;
   border-radius: 25% 10%;
   color: #BF0A30;
 }
@@ -63,16 +75,61 @@
   height: 100hv;
   background-color: #cccccc; /* Used if the image is unavailable */
 }
+.q-container .backg, .Final .backg {
+  position: absolute; 
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url('./images/flag.jpg') center center;
+  background-position: center; 
+  opacity: .05;
+  height: 100hv;
+  background-color: #cccccc; /* Used if the image is unavailable */
+}
+.Final {
+  display: block;
+  grid-template-columns: repeat(2, 80px);
+  grid-gap: 6px 10px;
+  text-align: center;
+  position: center;
+  z-index: 1;
+  backface-visibility: hidden;
+}
 .wel-h2{
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Rampart One', cursive;
   font-size: xx-large;
   font-weight: bold;
 }
-.q-btn{
+.q-btn {
   width: 30%;
   display: block;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
 }
-#score-section{
+#score-section {
   margin-top: 5%;
   margin-bottom: 1%;
+  padding: 2% 0 2% 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  font-size: larger;
+  color: blue;
+  border-top: 5px dotted #002868;
+  border-bottom: 5px dotted #002868;
+}
+.feedback {
+  margin-top: 5%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  font-size: larger;
+  color: blue;
+}
+.f-p {
+  font-family: 'Lilita One';
+  font-size: 2em;
+  margin-top: 40%;
+  color: blue;
 }

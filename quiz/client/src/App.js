@@ -1,16 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import './App.css';
-import questionsData from './components/questionsData'
 import Question from './components/Question'
 import Welcome from './components/Welcome'
+import FinalScore from './components/FinalScore';
 
-function FinalScore({score, totalScore}) {
-  return (
-    <>
-      <p>Congatulation! Your final score was {score}/{totalScore}</p>
-    </>
-  )
-}
 
 function App() {
   const [feedback, setFeedback] = useState('');
@@ -28,9 +21,9 @@ function App() {
 
   const incrementQuestionIndex = () => {
     setCurrentQuestionIndex(currentQuestionIndex + 1);
+    setFeedback('');
   }
 
-  // const [unAnsweredQuestions, setUnAnsweredQuestions] = useState
   const checkAnswer = (correctAnswer, actualAnswer) => {
     
     if (correctAnswer === actualAnswer) {
@@ -55,15 +48,15 @@ function App() {
 
   return (
     <div className="App">
-      <div className='feedback'>
-        {feedback} 
-      </div>
       <div id='score-section'>
         The score is {score}/{questionList.length}
       </div>
       <div>
         {/* {questionComponents} */}
         <Question question={questionList[currentQuestionIndex]} onAnswer={checkAnswer} onNext={incrementQuestionIndex} />
+      </div>
+      <div className='feedback'>
+        {feedback} 
       </div>
     </div>
   );
