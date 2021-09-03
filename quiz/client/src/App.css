@@ -44,7 +44,7 @@
   color: white;
 }
 .q-next{
-  border : 2px solid black;
+  border : 2px solid #286800;
   border-radius : 10px;
   margin-top: 0.5%;
   margin-bottom: 0.5%;
@@ -109,6 +109,10 @@
   margin-right: auto;
   margin-left: auto;
 }
+.q-btn:hover, .q-next:hover, #wel-btn:hover  {
+  border: double;
+}
+
 #score-section {
   margin-top: 5%;
   margin-bottom: 1%;
@@ -130,6 +134,6 @@
 .f-p {
   font-family: 'Lilita One';
   font-size: 2em;
-  margin-top: 40%;
+  margin-top: 20%;
   color: blue;
 }
