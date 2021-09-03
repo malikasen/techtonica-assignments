@@ -13,7 +13,7 @@ function FinalScore({score, totalScore}) {
 }
 
 function App() {
-  const [feedback, setFeedback] = useState('Feedback will be displayed here');
+  const [feedback, setFeedback] = useState('');
   const [score, setScore] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
   const [questionList, setQuestionList] = useState([]);
@@ -59,7 +59,7 @@ function App() {
         {feedback} 
       </div>
       <div id='score-section'>
-        {score}/{questionList.length}
+        The score is {score}/{questionList.length}
       </div>
       <div>
         {/* {questionComponents} */}

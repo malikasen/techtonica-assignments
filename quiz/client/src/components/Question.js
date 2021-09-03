@@ -15,13 +15,17 @@ function Question(props) {
     props.onNext();
   }
   return (
-      <div>
-        <h3>Question {props.question.id}: {props.question.title}</h3>
-        <input type='submit' value={props.question.choices[0]} onClick={ () => onAnswer(0) } disabled={questionAnswered} />
-        <input type='submit' value={props.question.choices[1]} onClick={ () => onAnswer(1) } disabled={questionAnswered} />
-        <input type='submit' value={props.question.choices[2]} onClick={ () => onAnswer(2) } disabled={questionAnswered} />
-        <input type='submit' value={props.question.choices[3]} onClick={ () => onAnswer(3) } disabled={questionAnswered} />
-        <input type='button' value='Next question' onClick={proceedToNextQuestion} disabled={!questionAnswered} />
+      <div className='q-container'>
+        <h3 className='q-q'>Question {props.question.id}: {props.question.title}</h3>
+        {/* <div className='q-row'> */}
+          <input className="box q-btn" type='submit' value={props.question.choices[0]} onClick={ () => onAnswer(0) } disabled={questionAnswered} />
+          <input className="box q-btn" type='submit' value={props.question.choices[1]} onClick={ () => onAnswer(1) } disabled={questionAnswered} />
+        {/* </div> */}
+        {/* <div className='q-row'> */}
+          <input className="box q-btn" type='submit' value={props.question.choices[2]} onClick={ () => onAnswer(2) } disabled={questionAnswered} />
+          <input className="box q-btn" type='submit' value={props.question.choices[3]} onClick={ () => onAnswer(3) } disabled={questionAnswered} />
+        {/* </div> */}
+        <input className="q-next" type='button' value='Next question' onClick={proceedToNextQuestion} disabled={!questionAnswered} />
       </div>
   )
 }

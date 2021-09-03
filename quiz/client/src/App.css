@@ -2,3 +2,77 @@
   text-align: center;
 }
 
+.Welcome {
+  text-align: center;
+  position: center;
+  z-index: 1;
+  backface-visibility: hidden;
+}
+.row {
+  padding-top: 10%;
+}
+.q-q{
+  display: block;
+  margin: 5% 10%;
+}
+.q-container{
+  display: block;
+  grid-template-columns: repeat(2, 80px);
+  grid-gap: 6px 10px;
+}
+/* .q-row{
+  display : flex;
+  flex-direction: column;
+} */
+.box{
+  border : 2px solid black;
+  border-radius : 10px;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+}
+.q-next{
+  border : 2px solid black;
+  border-radius : 10px;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+}
+#wel-btn{
+  width: 35%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1% 2%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: medium;
+  font-weight: bolder;
+  border-style: solid;
+  border-color: #002868 ; 
+  border-radius: 25% 10%;
+  color: #BF0A30;
+}
+.Welcome .backg {
+  position: absolute; 
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url('./images/flag.jpg') center center;
+  background-position: center; 
+  opacity: .5;
+  height: 100hv;
+  background-color: #cccccc; /* Used if the image is unavailable */
+}
+.wel-h2{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: xx-large;
+  font-weight: bold;
+}
+.q-btn{
+  width: 30%;
+  display: block;
+}
+#score-section{
+  margin-top: 5%;
+  margin-bottom: 1%;
+}
