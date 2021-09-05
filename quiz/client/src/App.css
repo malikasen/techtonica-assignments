@@ -103,7 +103,10 @@
   font-weight: bold;
 }
 .q-btn {
-  width: 30%;
+  /* width: 30%; */
+  min-width: 30%;
+  padding-left: 1%;
+  padding-right: 1%;
   display: block;
   text-align: center;
   margin-right: auto;
