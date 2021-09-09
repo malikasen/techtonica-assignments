@@ -5,6 +5,7 @@ function DeleteEvent() {
   const deleteEvent = (e) => {
     e.preventDefault();
     // I want to filter mockEvents state from a sibling using the deleteEventId state 
+    
     setDeleteEventId('');
   }
   return (
