@@ -22,39 +22,17 @@ const reducer = (state, action) => {
 
     case "editCategory":
       return { ...state, category: action.payload };
+    
+    case "setToInitialState":
+      return { ...initialState };
 
     default:
       return state;
   }
 };
 
-function Events() {
-  const event1 = {
-    id: 1,
-    name: "Birthday",
-    date: "2021-09-01",
-    description: "A birthday party for my best friend",
-    category: "Celebration",
-  };
-  
-  const event2 = {
-    id: 2,
-    name: "Graduation",
-    date: "2021-08-01",
-    description: "The class of 2021 graduates from East High",
-    category: "Education",
-  };
-  
-  const event3 = {
-    id: 3,
-    name: "JS Study Session",
-    date: "2021-10-01",
-    description: "A chance to practice Javascript interview questions",
-    category: "Education",
-  };
-  const [mockEvents, setMockEvents] = useState([event1, event2, event3])
-  // const EventForm = () => {
-    // const [event, setEvent] = useState({})
+function Events({ mockEvents, setMockEvents }) {
+
     const [state, dispatch] = useReducer(reducer, initialState);
     
   //   return <div>...</div>;
@@ -66,7 +44,6 @@ function Events() {
     // setEvent({name: state.name, date: state.date, description: state.description, category: state.description})
     setMockEvents([...mockEvents, 
       {name: state.name, date: state.date, description: state.description, category: state.description}]);
-    // I want to use initialState to clear up input boxes onSubmit
   }
   return (
     <div>
@@ -124,7 +101,12 @@ function Events() {
               })}
             />
           </fieldset>
-          <input type="submit" value="Add Event" onClick={(e) => addEvent(e)}/>
+          <input type="submit" value="Add Event" 
+            onClick={(e) => { 
+              addEvent(e); 
+              dispatch({type: "setToInitialState", payload: e.target.value});
+              }
+            } />
         </form>
       </div>
     </div>

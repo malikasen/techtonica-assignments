@@ -8,4 +8,5 @@ router.get('/', function(req, res, next) {
 router.get('/foobar/', function(req, res, next) {
   res.render('index', { title: 'This is my foobar route.' });
 });
+
 module.exports = router;

@@ -4,7 +4,7 @@ import DeleteUser from './DeleteUser'
 function Users() {
   const [apiResponse, setApiResponse] = useState([]);
 
-  console.log("apiResponse", apiResponse)
+  // console.log("apiResponse", apiResponse)
   const [users, setUsers] = useState([]);
   const getUsers = () => {
     fetch("http://localhost:3000/users")
@@ -12,11 +12,12 @@ function Users() {
         return res.json()
       })
       .then(res => setApiResponse(res))
-      .then(() => setUsers(apiResponse))
+      .then(() => setUsers(apiResponse));
   };
 
   useEffect(() => {
     getUsers(); // useEffect will run getUsers() every time this component loads, as opposed to just the first time it is rendered.
+    console.log('users', users);
   }, []);
  
   // const marlin = { name: "Marlin", email: "marlin@gmail.com", id:"1" };
@@ -26,7 +27,7 @@ function Users() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [id, setId] = useState('');
-  const onSubmit = e => {
+  const addUser = e => {
     e.preventDefault();
     const newUser = {id: id, name: name, email: email};
     setUsers([...users, newUser]);
@@ -69,7 +70,7 @@ function Users() {
               <input type="number" id="add-user-id" value={id}
   onChange={(e) => setId(e.target.value)} />
             </fieldset>
-            <input type="submit" value="Add" onClick={onSubmit}/>
+            <input type="submit" value="Add" onClick={addUser}/>
           </form>
         </div>
         <DeleteUser deleteUser={deleteUser} />
