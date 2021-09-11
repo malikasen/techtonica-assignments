@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import DeleteUser from './DeleteUser'
 
 function Users() {
-  const [apiResponse, setApiResponse] = useState([]);
+  // const [apiResponse, setApiResponse] = useState([]);
 
   // console.log("apiResponse", apiResponse)
   const [users, setUsers] = useState([]);
@@ -11,8 +11,15 @@ function Users() {
       .then(res => {
         return res.json()
       })
-      .then(res => setApiResponse(res))
-      .then(() => setUsers(apiResponse));
+      // .then(res => setApiResponse(res))
+      .then((res) => setUsers(res));
+  };
+  const postUser = (newUser) => {
+    fetch("http://localhost:3000/users", {method:"POST", body: JSON.stringify(newUser), headers: {"content-type": "application/json"}})
+      .then(res => {
+        return res.json()
+      })
+      .then((res) => setUsers(res));
   };
 
   useEffect(() => {
@@ -26,14 +33,14 @@ function Users() {
   
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [id, setId] = useState('');
+  
   const addUser = e => {
     e.preventDefault();
-    const newUser = {id: id, name: name, email: email};
-    setUsers([...users, newUser]);
+    const newUser = {name: name, email: email};
+    postUser(newUser);
+    // setUsers([...users, newUser]);
     setName('');
     setEmail('');
-    setId('');
   };
   const deleteUser = (deleteId) => {
     const newUsers = users.filter(i=>i.id !== deleteId)
@@ -64,11 +71,6 @@ function Users() {
               <label>Email</label>
               <input type="text" id="add-user-email" value={email}
   onChange={(e) => setEmail(e.target.value)} />
-            </fieldset>
-            <fieldset>
-              <label>ID</label>
-              <input type="number" id="add-user-id" value={id}
-  onChange={(e) => setId(e.target.value)} />
             </fieldset>
             <input type="submit" value="Add" onClick={addUser}/>
           </form>
